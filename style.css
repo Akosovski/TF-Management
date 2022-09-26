@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+}
+
+#spacer{
+    margin-top: 20vh;
+}
+
+#app{
+    text-align: center;
+}
+
+#app img{
+    margin: 0 auto;
+}
