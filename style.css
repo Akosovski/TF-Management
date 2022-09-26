@@ -1,9 +1,10 @@
 * {
     margin: 0;
+    font-family: 'Quicksand', sans-serif;
 }
 
-#spacer{
-    margin-top: 20vh;
+.main-spacer{
+    margin-top: 10vh;
 }
 
 #app{
@@ -11,5 +12,8 @@
 }
 
 #app img{
+    width: 400px;
     margin: 0 auto;
+    border-radius: 300px;
+    box-shadow: 14px 14px;
 }

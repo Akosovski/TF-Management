@@ -7,15 +7,19 @@
         <title>Random User Generator</title>
         <link rel="stylesheet" href="bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet"> 
     </head>
     <body>
-        <div id="spacer"></div>
+        <div class="main-spacer"></div>
         <div id="app">
             <img v-bind:src="picture" :alt="'${firstName} ${lastName}'">
-            <h1>Hello {{firstName}} {{lastName}}</h1>
-            <h3>Email: {{email}}</h3>
-            <button>Get Random User</button>
-
+            <div class="container mt-5">
+                <h1>Hello {{firstName}} {{lastName}}</h1>
+                <h3>Email: {{email}}</h3>
+                <button class="btn btn-primary btn-lg mt-3" v-on:click="getUser()">Get Random User</button>
+            </div>
         </div>
         <script src="https://unpkg.com/vue@3.0.5"></script>
         <script src="app.js"></script>
