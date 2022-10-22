@@ -8,6 +8,12 @@
     transition: all 300ms;
 }
 
+#invoice-logo{
+    width: 65%;
+    height: auto 100%;
+    transition: all 300ms;
+}
+
 @media only screen and (max-width: 600px) {
     #logo{
         width: 80%;
