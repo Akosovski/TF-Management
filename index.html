@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap" rel="stylesheet"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" type="image/x-icon" href="./logo-invoice.png">
 </head>
 <body>
     
@@ -38,7 +39,7 @@
       
                   <div class="col-12 mt-4">
                     <label for="date" class="form-label">Tanggal Pembelian</label>
-                    <input type="date" class="form-control" id="email" placeholder="you@example.com">
+                    <input type="date" class="form-control" id="date" placeholder="Tanggal Pembelian">
                     <div class="invalid-feedback">
                       Please enter a valid date.
                     </div>
@@ -58,24 +59,15 @@
       
                 <div class="my-3">
 
-                  <div class="form-check mb-2">
-                    <input id="transfer" name="paymentMethod" type="radio" class="form-check-input" checked required>
-                    <label class="form-check-label" for="credit">Transfer</label>
-                  </div>
-
-                  <div class="form-check mb-2">
-                    <input id="cash" name="paymentMethod" type="radio" class="form-check-input" required>
-                    <label class="form-check-label" for="debit">Cash</label>
-                  </div>
-
-                  <div class="form-check">
-                    <input id="kredit" name="paymentMethod" type="radio" class="form-check-input" required>
-                    <label class="form-check-label" for="paypal">Kredit</label>
-                  </div>
+                  <select class="form-select" aria-label="Default select example" id="payment">
+                    <option value="Transfer">Transfer</option>
+                    <option value="Cash">Cash</option>
+                    <option value="Kredit">Kredit</option>
+                  </select>
 
                 </div>
       
-                <button class="w-100 btn btn-primary btn-lg" type="submit">Lanjut</button>
+                <button class="w-100 btn btn-primary btn-lg" type="submit" onclick="firstStage()">Lanjut</button>
               </form>
 
             </div>
@@ -86,6 +78,8 @@
           <p class="mb-1 fs-5">&copy;2022 Tiek's Fashion</p>
         </footer>
       </div>
+
+    <script src="./app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>
