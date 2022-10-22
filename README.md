@@ -23,5 +23,7 @@
 
 ## Upcoming Features ✨
 
-- Creation/Edit Invoice 
+- Migrate to Django
+- Creation/Edit Invoice
+- Invoice Database
 - Export Invoice to JPEG & PDF
