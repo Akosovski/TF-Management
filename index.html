@@ -13,7 +13,6 @@
     <link rel="icon" type="image/x-icon" href="./logo-invoice.png">
 </head>
 <body>
-    
     <div class="container">
         <main>
           <div class="py-5 pb-1 text-center">
@@ -23,7 +22,8 @@
           <div class="row" id="main-body">
             <hr class="my-4">
             <div class="col-md">
-              <h3 class="mb-4">Detail Pembeli</h3>
+              
+              <h4 class="mb-4">Detail Pembeli</h3>
 
               <form class="needs-validation" novalidate>
                 <div class="row g-3">
@@ -45,29 +45,55 @@
                     </div>
                   </div>
       
-                  <div class="col-12 mt-4">
+                  <div class="col-12 mt-4 mb-2">
                     <label for="address" class="form-label">Alamat Pengiriman</label>
                     <input type="text" class="form-control" id="address" placeholder="Alamat" required>
                     <div class="invalid-feedback">
                       Please enter your shipping address.
                     </div>
                   </div>
+                
+                  <hr class="my-4 mt-4">
       
-                <hr class="my-4 mt-5">
-      
-                <h4 class="mb-2 mt-1">Metode Pembayaran</h4>
-      
-                <div class="my-3">
+                  <h4 class="mb-2 mt-1 mb-4">Detail Produk</h4>
+                  
+                  <div class="container">
+                    <div class="col-12">
+                      <input class="form-control" type="text" name="nama-produk" id="nama-produk" placeholder="Nama Produk" required>
+                    </div>
+                    <div class="row">
+                      <div class="col-4 mt-3">
+                        <input class="form-control" type="text" name="jumlah-produk" id="jumlah-produk" placeholder="Jumlah" required>
+                      </div>
+                      <div class="col-8 mt-3">
+                        <div class="input-group">
+                          <span class="input-group-text">Rp.</span>
+                          <input class="form-control" type="number" name="harga-produk" id=harga-produk" placeholder="Harga Satuan" required>
+                        </div>
+                      </div>
+                    </div>
+                    <a class="w-100 btn btn-primary btn-lg mt-4" onclick="tambahProduk()">Tambah Produk</a>
+                  </div>
 
-                  <select class="form-select" aria-label="Default select example" id="payment">
-                    <option value="Transfer">Transfer</option>
-                    <option value="Cash">Cash</option>
-                    <option value="Kredit">Kredit</option>
-                  </select>
+                  <div id="list-produk" style="display: none">
+                  
+                  </div>
 
-                </div>
-      
-                <button class="w-100 btn btn-primary btn-lg" type="submit" onclick="firstStage()">Lanjut</button>
+                  <hr class="my-4 mt-5">
+                    
+                  <h4 class="mb-2 mt-1">Metode Pembayaran</h4>
+        
+                  <div class="my-3">
+                    <select class="form-select" aria-label="Default select example" id="payment">
+                      <option value="Transfer">Transfer</option>
+                      <option value="Cash">Cash</option>
+                      <option value="Kredit">Kredit</option>
+                    </select>
+                  </div>
+                
+                <hr class="my-4 mt-4">
+
+                <button class="w-100 btn btn-primary btn-lg" onclick="firstStage()">Export</button>
               </form>
 
             </div>
