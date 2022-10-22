@@ -15,16 +15,18 @@
     
     <div class="container">
         <main>
-          <div class="py-5 text-center">
-            <img class="d-block mx-auto mb-1" src="./logo.png" id="logo">
+          <div class="py-5 pb-1 text-center">
+            <img class="d-block mx-auto" src="./logo.png" id="logo">
           </div>
-      
+
           <div class="row" id="main-body">
+            <hr class="my-4">
             <div class="col-md">
-              <h3 class="mb-4">Invoice Creator Form</h3>
+              <h3 class="mb-4">Detail Pembeli</h3>
+
               <form class="needs-validation" novalidate>
                 <div class="row g-3">
-                  <div class="col-12">
+                  <div class="col-12 mt-3">
                     <label for="username" class="form-label">Nama</label>
                       <div class="input-group has-validation">
                         <input type="text" class="form-control" id="name" placeholder="Nama" required>
@@ -34,43 +36,48 @@
                     </div>
                   </div>
       
-                  <div class="col-12">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                  <div class="col-12 mt-4">
+                    <label for="date" class="form-label">Tanggal Pembelian</label>
+                    <input type="date" class="form-control" id="email" placeholder="you@example.com">
                     <div class="invalid-feedback">
-                      Please enter a valid email address for shipping updates.
+                      Please enter a valid date.
                     </div>
                   </div>
       
-                  <div class="col-12">
-                    <label for="address" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                  <div class="col-12 mt-4">
+                    <label for="address" class="form-label">Alamat Pengiriman</label>
+                    <input type="text" class="form-control" id="address" placeholder="Alamat" required>
                     <div class="invalid-feedback">
                       Please enter your shipping address.
                     </div>
                   </div>
       
-                <hr class="my-4">
+                <hr class="my-4 mt-5">
       
-                <h4 class="mb-2 mt-1">Payment</h4>
+                <h4 class="mb-2 mt-1">Metode Pembayaran</h4>
       
                 <div class="my-3">
-                  <div class="form-check">
-                    <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+
+                  <div class="form-check mb-2">
+                    <input id="transfer" name="paymentMethod" type="radio" class="form-check-input" checked required>
                     <label class="form-check-label" for="credit">Transfer</label>
                   </div>
-                  <div class="form-check">
-                    <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+
+                  <div class="form-check mb-2">
+                    <input id="cash" name="paymentMethod" type="radio" class="form-check-input" required>
                     <label class="form-check-label" for="debit">Cash</label>
                   </div>
+
                   <div class="form-check">
-                    <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+                    <input id="kredit" name="paymentMethod" type="radio" class="form-check-input" required>
                     <label class="form-check-label" for="paypal">Kredit</label>
                   </div>
+
                 </div>
       
                 <button class="w-100 btn btn-primary btn-lg" type="submit">Lanjut</button>
               </form>
+
             </div>
           </div>
         </main>
