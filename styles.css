@@ -9,15 +9,23 @@
 }
 
 #invoice-logo{
-    width: 65%;
+    width: 40%;
     height: auto 100%;
-    transition: all 300ms;
+    margin-left: 15px;
+}
+
+#exported{
+    border: 1px solid black;
+    padding-top: 20px;
 }
 
 @media only screen and (max-width: 600px) {
     #logo{
         width: 80%;
         height: auto 100%;
+    }
+    #invoice-logo{
+        width: 80%;
     }
     #main-body{
         margin: 0 5px 0 5px;
