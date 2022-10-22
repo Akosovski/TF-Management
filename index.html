@@ -20,65 +20,62 @@
           </div>
 
           <div class="row" id="main-body">
-            <hr class="my-4">
+            
             <div class="col-md">
-              
-              <h4 class="mb-4">Detail Pembeli</h3>
+              <form class="needs-validation" novalidate></form>
+              <hr class="my-4">
+                  <h4 class="mt-1 mb-4">Detail Pembeli</h3>
 
-              <form class="needs-validation" novalidate>
-                <div class="row g-3">
-                  <div class="col-12 mt-3">
-                    <label for="username" class="form-label">Nama</label>
-                      <div class="input-group has-validation">
-                        <input type="text" class="form-control" id="name" placeholder="Nama" required>
-                      <div class="invalid-feedback">
-                        Nama harus diisi.
+                  <div class="container p-0">
+                    <div class="row g-3">
+                      <div class="col-12 mt-3">
+                        <label for="username" class="form-label">Nama</label>
+                          <div class="input-group has-validation">
+                            <input type="text" class="form-control" id="name" placeholder="Nama" required>
+                          <div class="invalid-feedback">
+                            Nama harus diisi.
+                          </div>
+                        </div>
+                      </div>
+          
+                      <div class="col-12 mt-4">
+                        <label for="date" class="form-label">Tanggal Pembelian</label>
+                        <input type="date" class="form-control" id="date" placeholder="Tanggal Pembelian">
+                        <div class="invalid-feedback">
+                          Tanggal harus diisi dengan benar.
+                        </div>
+                      </div>
+
+                      <div class="col-12 mt-4">
+                        <label for="payment" class="form-label">Metode Pembayaran</label>
+                        <select class="form-select" aria-label="Default select example" id="payment">
+                          <option value="Transfer">Transfer</option>
+                          <option value="Cash">Cash</option>
+                          <option value="Kredit">Kredit</option>
+                        </select>
+                      </div>
+          
+                      <div class="col-12 mt-4 mb-2">
+                        <label for="address" class="form-label">Alamat Pengiriman</label>
+                        <input type="text" class="form-control" id="address" placeholder="Alamat" required>
+                        <div class="invalid-feedback">
+                          Alamat harus diisi.
+                        </div>
+                        <a class="w-100 btn btn-primary btn-lg mt-4" type="submit" onclick="tambahDetails()">Tambah Detail</a>
                       </div>
                     </div>
                   </div>
-      
-                  <div class="col-12 mt-4">
-                    <label for="date" class="form-label">Tanggal Pembelian</label>
-                    <input type="date" class="form-control" id="date" placeholder="Tanggal Pembelian">
-                    <div class="invalid-feedback">
-                      Please enter a valid date.
-                    </div>
-                  </div>
-      
-                  <div class="col-12 mt-4 mb-2">
-                    <label for="address" class="form-label">Alamat Pengiriman</label>
-                    <input type="text" class="form-control" id="address" placeholder="Alamat" required>
-                    <div class="invalid-feedback">
-                      Please enter your shipping address.
-                    </div>
-                  </div>
-                
+                  
                   <hr class="my-4 mt-4">
 
-                  <h4 class="mb-2 mt-1">Metode Pembayaran</h4>
-        
-                  <div class="my-3">
-                    <select class="form-select" aria-label="Default select example" id="payment">
-                      <option value="Transfer">Transfer</option>
-                      <option value="Cash">Cash</option>
-                      <option value="Kredit">Kredit</option>
-                    </select>
-                  </div>
+                  <h4 class="mt-1 mb-4">Detail Produk</h4>
                   
-                  <hr class="my-4 mt-3">
-
-                  <h4 class="mb-2 mt-1 mb-4">Detail Produk</h4>
-                  
-                  <div class="container">
-                    <div class="row p-0">
-                      <div class="col-9">
+                  <div class="container p-0">
+                    <div class="row">
+                      <div class="col-12">
                         <input class="form-control" type="text" name="nama-produk" id="nama-produk" placeholder="Nama Produk" required>
                       </div>
-                      <div class="col-3">
-                        <a class="btn btn-primary w-100 btn-md" type="submit" onclick="clear()">Hapus</a>
-                      </div>
                     </div>
-                    
                     <div class="row">
                       <div class="col-4 mt-3">
                         <input class="form-control" type="number" name="jumlah-produk" id="jumlah-produk" placeholder="Jumlah" required>
@@ -94,16 +91,32 @@
                   </div>
 
                   <hr class="my-4 mt-4">
-                  <table id="list-produk" class="table text-center">
-                    <thead>
-                      <tr>
-                        <th>Info</th>
-                        <th>Jumlah</th>
-                        <th>Satuan</th>
-                        <th>Total</th>
-                      </tr>
-                    </thead>
-                  </table>
+
+                  <div class="container" id="exported">
+                    <div class="row">
+                      <div class="col-8">
+                        <img src="./logo.png" id="invoice-logo">
+                      </div>
+                      <div class="col-4">
+                        <h4 id="invoicer" style="text-align: right; margin-right: 10px; margin-top: 20px;">INVOICE</h4>
+                      </div>
+                    </div>
+                    <div id="list-details" class="mb-3 ms-2 p-2" style="line-height: 1.6;"></div>
+                    <table id="list-produk" class="table" style="text-align: right;">
+                      <thead>
+                        <tr>
+                          <th>Info</th>
+                          <th>Jumlah</th>
+                          <th>Satuan</th>
+                          <th>Total</th>
+                        </tr>
+                      </thead>
+                    </table>
+                    <p style="text-align: right; margin-right: 10px;" id="grand-total">Total Tagihan</p>
+                    <p style="text-align: right; margin-right: 10px; margin-bottom: 0;">BNI No. Rek <strong>211998281</strong> a.n. Titik Suharni</p>
+                    <p style="text-align: right; margin-right: 10px;">BCA No. Rek <strong>1651521292</strong> a.n. Titik Suharni</p>
+                  </div>
+                  <a class="w-100 btn btn-success btn-lg mt-4 mb-2" type="submit" onclick="exportInvoice()">Download Invoice</a>
               </form>
 
             </div>
