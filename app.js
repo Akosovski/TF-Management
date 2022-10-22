@@ -81,7 +81,3 @@ function tambahProduk() {
     listProduct.appendChild(theBody);
     theTotal.innerHTML = "<strong>Total Tagihan : </strong>" + formatter.format(grand_total);
 }
-
-function exportInvoice() {
-    
-}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Invoice</title>
+    <title>Invoice - Tiek's Fashion</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap" rel="stylesheet"> 
@@ -92,7 +92,7 @@
 
                   <hr class="my-4 mt-4">
 
-                  <div class="container" id="exported">
+                  <div class="container overflow-auto" id="exported">
                     <div class="row">
                       <div class="col-8">
                         <img src="./logo.png" id="invoice-logo">
@@ -101,7 +101,7 @@
                         <h4 id="invoicer" style="text-align: right; margin-right: 10px; margin-top: 20px;">INVOICE</h4>
                       </div>
                     </div>
-                    <div id="list-details" class="mb-3 ms-2 p-2" style="line-height: 1.6;"></div>
+                    <div id="list-details" class="mb-3 ms-2 p-2" style="max-width: 700px;"></div>
                     <table id="list-produk" class="table" style="text-align: right;">
                       <thead>
                         <tr>
@@ -116,8 +116,8 @@
                     <p style="text-align: right; margin-right: 10px; margin-bottom: 0;">BNI No. Rek <strong>211998281</strong> a.n. Titik Suharni</p>
                     <p style="text-align: right; margin-right: 10px;">BCA No. Rek <strong>1651521292</strong> a.n. Titik Suharni</p>
                   </div>
-                  <a class="w-100 btn btn-success btn-lg mt-4 mb-2" type="submit" onclick="exportInvoice()">Download Invoice</a>
-              </form>
+                  <a class="w-100 btn btn-success btn-lg mt-4 mb-2" type="submit" id="download">Download Invoice</a>
+                </form>
 
             </div>
           </div>
