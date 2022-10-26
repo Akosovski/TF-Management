@@ -14,9 +14,14 @@
     margin-left: 15px;
 }
 
-#exported{
-    border: 1px solid black;
+#html-content-holder{
+    overflow: auto;
     padding-top: 20px;
+    background-color: white;
+}
+
+#border{
+    border: 1px solid black;
 }
 
 @media only screen and (max-width: 600px) {

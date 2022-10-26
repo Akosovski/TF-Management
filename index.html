@@ -11,6 +11,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles.css">
     <link rel="icon" type="image/x-icon" href="./logo-invoice.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
 </head>
 <body>
     <div class="container">
@@ -92,31 +94,34 @@
 
                   <hr class="my-4 mt-4">
 
-                  <div class="container overflow-auto" id="exported">
-                    <div class="row">
-                      <div class="col-8">
-                        <img src="./logo.png" id="invoice-logo">
-                      </div>
-                      <div class="col-4">
-                        <h4 id="invoicer" style="text-align: right; margin-right: 10px; margin-top: 20px;">INVOICE</h4>
+                  <div class="container p-1" id="html-content-holder">
+                    <div class="container p-3" id="border">
+                        <div class="row">
+                          <div class="col-8">
+                            <img src="./logo.png" id="invoice-logo">
+                          </div>
+                          <div class="col-4">
+                            <h4 id="invoicer" style="text-align: right; margin-right: 10px; margin-top: 20px;">INVOICE</h4>
+                          </div>
+                        </div>
+                        <div id="list-details" class="mb-3 ms-2 p-2" style="max-width: 700px;"></div>
+                        <table id="list-produk" class="table" style="text-align: right;">
+                          <thead>
+                            <tr>
+                              <th>Info</th>
+                              <th>Jumlah</th>
+                              <th>Satuan</th>
+                              <th>Total</th>
+                            </tr>
+                          </thead>
+                        </table>
+                        <p style="text-align: right; margin-right: 10px;" id="grand-total">Total Tagihan</p>
+                        <p style="text-align: right; margin-right: 10px; margin-bottom: 0;">BNI No. Rek <strong>211998281</strong> a.n. Titik Suharni</p>
+                        <p style="text-align: right; margin-right: 10px;">BCA No. Rek <strong>1651521292</strong> a.n. Titik Suharni</p>
                       </div>
                     </div>
-                    <div id="list-details" class="mb-3 ms-2 p-2" style="max-width: 700px;"></div>
-                    <table id="list-produk" class="table" style="text-align: right;">
-                      <thead>
-                        <tr>
-                          <th>Info</th>
-                          <th>Jumlah</th>
-                          <th>Satuan</th>
-                          <th>Total</th>
-                        </tr>
-                      </thead>
-                    </table>
-                    <p style="text-align: right; margin-right: 10px;" id="grand-total">Total Tagihan</p>
-                    <p style="text-align: right; margin-right: 10px; margin-bottom: 0;">BNI No. Rek <strong>211998281</strong> a.n. Titik Suharni</p>
-                    <p style="text-align: right; margin-right: 10px;">BCA No. Rek <strong>1651521292</strong> a.n. Titik Suharni</p>
-                  </div>
-                  <a class="w-100 btn btn-success btn-lg mt-4 mb-2" type="submit" id="download">Download Invoice</a>
+
+                  <input download="download.png" class="w-100 btn btn-success btn-lg mt-4 mb-2" id="btn-Preview-Image" type="button" value="Download Invoice" />
                 </form>
 
             </div>
@@ -129,6 +134,7 @@
       </div>
 
     <script src="./app.js"></script>
+    <script src="./script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>
