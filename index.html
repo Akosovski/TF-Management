@@ -94,30 +94,33 @@
 
                   <hr class="my-4 mt-4">
 
-                  <div class="container overflow-auto" id="html-content-holder">
-                    <div class="row">
-                      <div class="col-8">
-                        <img src="./logo.png" id="invoice-logo">
-                      </div>
-                      <div class="col-4">
-                        <h4 id="invoicer" style="text-align: right; margin-right: 10px; margin-top: 20px;">INVOICE</h4>
+                  <div class="container p-1" id="html-content-holder">
+                    <div class="container p-3" id="border">
+                        <div class="row">
+                          <div class="col-8">
+                            <img src="./logo.png" id="invoice-logo">
+                          </div>
+                          <div class="col-4">
+                            <h4 id="invoicer" style="text-align: right; margin-right: 10px; margin-top: 20px;">INVOICE</h4>
+                          </div>
+                        </div>
+                        <div id="list-details" class="mb-3 ms-2 p-2" style="max-width: 700px;"></div>
+                        <table id="list-produk" class="table" style="text-align: right;">
+                          <thead>
+                            <tr>
+                              <th>Info</th>
+                              <th>Jumlah</th>
+                              <th>Satuan</th>
+                              <th>Total</th>
+                            </tr>
+                          </thead>
+                        </table>
+                        <p style="text-align: right; margin-right: 10px;" id="grand-total">Total Tagihan</p>
+                        <p style="text-align: right; margin-right: 10px; margin-bottom: 0;">BNI No. Rek <strong>211998281</strong> a.n. Titik Suharni</p>
+                        <p style="text-align: right; margin-right: 10px;">BCA No. Rek <strong>1651521292</strong> a.n. Titik Suharni</p>
                       </div>
                     </div>
-                    <div id="list-details" class="mb-3 ms-2 p-2" style="max-width: 700px;"></div>
-                    <table id="list-produk" class="table" style="text-align: right;">
-                      <thead>
-                        <tr>
-                          <th>Info</th>
-                          <th>Jumlah</th>
-                          <th>Satuan</th>
-                          <th>Total</th>
-                        </tr>
-                      </thead>
-                    </table>
-                    <p style="text-align: right; margin-right: 10px;" id="grand-total">Total Tagihan</p>
-                    <p style="text-align: right; margin-right: 10px; margin-bottom: 0;">BNI No. Rek <strong>211998281</strong> a.n. Titik Suharni</p>
-                    <p style="text-align: right; margin-right: 10px;">BCA No. Rek <strong>1651521292</strong> a.n. Titik Suharni</p>
-                  </div>
+
                   <input download="download.png" class="w-100 btn btn-success btn-lg mt-4 mb-2" id="btn-Preview-Image" type="button" value="Download Invoice" />
                 </form>
 
