@@ -14,9 +14,10 @@
     margin-left: 15px;
 }
 
-#exported{
+#html-content-holder{
     border: 1px solid black;
     padding-top: 20px;
+    background-color: white;
 }
 
 @media only screen and (max-width: 600px) {
