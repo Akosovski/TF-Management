@@ -12,6 +12,7 @@ $(document).ready(function() {
                 a.href = imgageData;
                 a.download = "invoice-download.png";
                 a.click();
+                element.width('auto');
             }
         });
     });
