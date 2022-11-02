@@ -1,5 +1,5 @@
 ## Tiek's Fashion Invoice Creator
-**Tiek's Fashion** is a business that runs in the field of fashion such as bags, scarfs, pouches, clutches etc. This invoice creator is intended to ease invoice making for proof of payment which will be sent to coustomer.
+**Tiek's Fashion** is a business that runs in the field of fashion such as bags, scarfs, pouches, clutches etc. This invoice creator is intended to be used as invoice generator making to provide proof of purchase which will be sent to the coustomer of Tiek's Fashion.
 
 ---
 
