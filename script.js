@@ -4,6 +4,7 @@ $(document).ready(function() {
     element.width('auto');
     $("#btn-Preview-Image").on('click', function() {
         element.width('860px');
+        element.height('initial');
         html2canvas(element, {
             onrendered: function(canvas) {
                 getCanvas = canvas;

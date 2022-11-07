@@ -24,6 +24,23 @@
     border: 1px solid black;
 }
 
+#footer-logo{
+    width: 18px;
+    height: auto;
+    float: right;
+    margin-top: 5px;
+}
+
+#footer-logo-col{
+    padding-left: 500px;
+}
+
+@media only screen and (max-width: 1200px) {
+    #footer-logo{
+        margin-top: 5px;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     #logo{
         width: 80%;
@@ -34,5 +51,10 @@
     }
     #main-body{
         margin: 0 5px 0 5px;
+    }
+    #footer-logo{
+        width: 18px;
+        height: auto;
+        margin-top: 5px;
     }
 }
