@@ -4,6 +4,7 @@ $(document).ready(function() {
     element.width('auto');
     $("#btn-Preview-Image").on('click', function() {
         element.width('860px');
+        // element.height('700px');
         html2canvas(element, {
             onrendered: function(canvas) {
                 getCanvas = canvas;
@@ -13,6 +14,7 @@ $(document).ready(function() {
                 a.download = "invoice-download.png";
                 a.click();
                 element.width('auto');
+                // element.height('auto');
             }
         });
     });
