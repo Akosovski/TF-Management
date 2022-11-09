@@ -9,7 +9,7 @@
 }
 
 #invoice-logo{
-    width: 30%;
+    width: 20%;
     height: auto 100%;
     margin-left: 15px;
 }
@@ -47,7 +47,7 @@
         height: auto 100%;
     }
     #invoice-logo{
-        width: 80%;
+        width: 75%;
     }
     #main-body{
         margin: 0 5px 0 5px;
