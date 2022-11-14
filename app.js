@@ -81,3 +81,11 @@ function tambahProduk() {
     listProduct.appendChild(theBody);
     theTotal.innerHTML = "<strong>Total Tagihan : </strong>" + formatter.format(grand_total);
 }
+
+function tambahDiskon() {
+    let theTotal = document.getElementById("grand-total");
+    var diskon = document.getElementById("jumlah-diskon").value;
+    if(diskon > 0){
+        theTotal.innerHTML = "<strong>Sebelum Diskon : </strong><s>" + formatter.format(grand_total) + "</s> <br><strong>Diskon Sebesar : </strong><u>" + formatter.format(diskon) + "</u><br><br><strong>Total Tagihan : </strong>" + formatter.format(grand_total - diskon);
+    }
+}

@@ -1,21 +1,15 @@
-$(document).ready(function() {
-    var element = $("#html-content-holder");
-    var getCanvas;
-    element.width('auto');
-    $("#btn-Preview-Image").on('click', function() {
-        element.width('860px');
-        // element.height('700px');
-        html2canvas(element, {
-            onrendered: function(canvas) {
-                getCanvas = canvas;
-                var imgageData = getCanvas.toDataURL("image/png");
-                var a = document.createElement("a");
-                a.href = imgageData;
-                a.download = "invoice-download.png";
-                a.click();
-                element.width('auto');
-                // element.height('auto');
-            }
-        });
+function downloadimage() {
+    var container = document.getElementById("html-content-holder");
+    container.style.width = '860px';
+    html2canvas(container, { allowTaint: true }).then(function (canvas) {
+        
+        var link = document.createElement("a");
+        document.body.appendChild(link);
+        link.download = "new_invoice.jpg";
+        link.href = canvas.toDataURL();
+        link.target = '_blank';
+        link.click();
+        
     });
-});
+    container.style.width = 'auto';
+}
