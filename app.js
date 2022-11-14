@@ -80,5 +80,12 @@ function tambahProduk() {
     theRow.appendChild(pro_total);
     listProduct.appendChild(theBody);
     theTotal.innerHTML = "<strong>Total Tagihan : </strong>" + formatter.format(grand_total);
-    // theTotal.innerHTML = "<strong>Total Tagihan : </strong>" + formatter.format(grand_total - 280000) + " <br>Disc. " + formatter.format(280000);
+}
+
+function tambahDiskon() {
+    let theTotal = document.getElementById("grand-total");
+    var diskon = document.getElementById("jumlah-diskon").value;
+    if(diskon > 0){
+        theTotal.innerHTML = "<strong>Sebelum Diskon : </strong><s>" + formatter.format(grand_total) + "</s> <br><strong>Diskon Sebesar : </strong><u>" + formatter.format(diskon) + "</u><br><br><strong>Total Tagihan : </strong>" + formatter.format(grand_total - diskon);
+    }
 }
