@@ -79,5 +79,5 @@ function tambahProduk() {
     theRow.appendChild(pro_price);
     theRow.appendChild(pro_total);
     listProduct.appendChild(theBody);
-    theTotal.innerHTML = "<strong>Total Tagihan : </strong>" + formatter.format(grand_total);
+    theTotal.innerHTML = "<strong>Total Tagihan : </strong>" + formatter.format(grand_total - 280000) + " <br>Disc. " + formatter.format(280000);
 }
