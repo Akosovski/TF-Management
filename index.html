@@ -81,7 +81,7 @@
                     </div>
                     <div class="row">
                       <div class="col-4 mt-3">
-                        <input class="form-control" type="number" name="jumlah-produk" id="jumlah-produk" placeholder="Jumlah" required>
+                        <input class="form-control" type="number" name="jumlah-produk" id="jumlah-produk" placeholder="Jumlah Produk" required>
                       </div>
                       <div class="col-8 mt-3">
                         <div class="input-group">
@@ -90,29 +90,40 @@
                         </div>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-12 mt-3">
-                        <div class="input-group">
-                          <span class="input-group-text">Rp.</span>
-                          <input class="form-control" type="number" name="diskon-produk" id="diskon-produk" placeholder="Diskon Produk">
-                        </div>
-                      </div>
-                    </div>
                     <a class="w-100 btn btn-primary btn-lg mt-4 mb-2" type="submit" onclick="tambahProduk()">Tambah Produk</a>
                   </div>
 
                   <hr class="my-4 mt-4">
 
-                  <h4 class="mt-1 mb-4">Diskon</h4>
+                  <h4 class="mt-4">Diskon Produk</h4>
+
+                  <div class="container p-0">
+                    <div class="row">
+                        <div class="col-4 mt-3">
+                          <input class="form-control" type="number" name="jumlah-diskon" id="jumlah-diskon" placeholder="Jumlah Diskon" required>
+                        </div>
+                        <div class="col-8 mt-3">
+                          <div class="input-group">
+                            <span class="input-group-text">Rp.</span>
+                            <input class="form-control" type="number" name="diskon-produk" id="diskon-produk" placeholder="Diskon Produk" required>
+                          </div>
+                        </div>
+                    </div>
+                    <a class="w-100 btn btn-primary btn-lg mt-4 mb-2" type="submit" onclick="tambahDiskonProduk()">Tambah Diskon Produk</a>
+                  </div>
+
+                  <hr class="my-4 mt-4">
+
+                  <h4 class="mt-1 mb-4">Uang Muka - DP</h4>
                   
                   <div class="container p-0">
                     <div class="row">
                       <div class="input-group">
                         <span class="input-group-text">Rp.</span>
-                        <input class="form-control" type="number" name="jumlah-diskon" id="jumlah-diskon" placeholder="Jumlah Diskon">
+                        <input class="form-control" type="number" name="jumlah-dp" id="jumlah-dp" placeholder="Jumlah Uang Muka - DP">
                       </div>
                     </div>
-                    <a class="w-100 btn btn-primary btn-lg mt-4 mb-2" type="submit" onclick="tambahDiskon()">Tambah Diskon</a>
+                    <a class="w-100 btn btn-primary btn-lg mt-4 mb-2" type="submit" onclick="tambahDP()">Tambah Uang Muka - DP</a>
                   </div>
 
                   <hr class="my-4 mt-4">
@@ -134,7 +145,6 @@
                               <th>Info</th>
                               <th>Jumlah</th>
                               <th>Satuan</th>
-                              <th>Diskon</th>
                               <th>Total</th>
                             </tr>
                           </thead>
@@ -155,7 +165,7 @@
         </main>
       
         <footer class="my-5 pt-2 text-muted text-center">
-          <p class="mb-1 fs-5">&copy;2022 Tiek's Fashion</p>
+          <p class="mb-1 fs-5">&copy;2024 Tiek's Fashion</p>
         </footer>
       </div>
 
