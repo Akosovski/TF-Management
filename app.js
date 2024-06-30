@@ -58,27 +58,39 @@ function tambahProduk() {
     var product_name = document.getElementById("nama-produk").value;
     var product_amount = document.getElementById("jumlah-produk").value;
     var product_price = document.getElementById("harga-produk").value;
+    var product_discount = document.getElementById("diskon-produk").value;
 
     var theBody = document.createElement("TBODY");
     var theRow = document.createElement("TR");
     var pro_name = document.createElement("TD");
     var pro_amount = document.createElement("TD");
     var pro_price = document.createElement("TD");
+    var pro_discount = document.createElement("TD");
     var pro_total = document.createElement("TD");
 
     pro_name.innerHTML = product_name;
     pro_amount.innerHTML = product_amount;
     pro_price.innerHTML = formatter.format(product_price);
-    pro_total.innerHTML = formatter.format(product_amount*product_price);
+    pro_discount.innerHTML = formatter.format(product_discount);
+    pro_total.innerHTML = formatter.format((product_amount*product_price)-product_discount);
 
-    inner_total = product_amount*product_price;
+    inner_total = (product_amount*product_price)-product_discount;
+
     grand_total += inner_total;
     theBody.appendChild(theRow);
     theRow.appendChild(pro_name);
     theRow.appendChild(pro_amount);
     theRow.appendChild(pro_price);
+    theRow.appendChild(pro_discount);
     theRow.appendChild(pro_total);
     listProduct.appendChild(theBody);
+
+    if(product_discount > 0){
+        theTotal.innerHTML = "<strong>Sebelum Diskon : </strong><s>" + formatter.format(grand_total) + 
+        "</s> <br><strong>Diskon Sebesar : </strong><u>" + formatter.format(product_discount) + 
+        "</u><br><br><strong>Total Tagihan : </strong>" + formatter.format(grand_total - product_discount);
+    }
+
     theTotal.innerHTML = "<strong>Total Tagihan : </strong>" + formatter.format(grand_total);
 }
 
@@ -86,6 +98,8 @@ function tambahDiskon() {
     let theTotal = document.getElementById("grand-total");
     var diskon = document.getElementById("jumlah-diskon").value;
     if(diskon > 0){
-        theTotal.innerHTML = "<strong>Sebelum Diskon : </strong><s>" + formatter.format(grand_total) + "</s> <br><strong>Diskon Sebesar : </strong><u>" + formatter.format(diskon) + "</u><br><br><strong>Total Tagihan : </strong>" + formatter.format(grand_total - diskon);
+        theTotal.innerHTML = "<strong>Sebelum Diskon : </strong><s>" + formatter.format(grand_total) + 
+        "</s> <br><strong>Diskon Sebesar : </strong><u>" + formatter.format(diskon) + 
+        "</u><br><br><strong>Total Tagihan : </strong>" + formatter.format(grand_total - diskon);
     }
 }
