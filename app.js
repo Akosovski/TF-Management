@@ -1,5 +1,6 @@
 var grand_total = 0;
 var grand_total_discount = 0;
+var grand_total_before = 0;
 const formatter = new Intl.NumberFormat('id-ID', {
     style: 'currency',
     currency: 'IDR',
@@ -73,8 +74,8 @@ function tambahProduk() {
     pro_total.innerHTML = formatter.format(product_amount*product_price);
 
     inner_total = product_amount*product_price;
+    grand_total_before += inner_total;
 
-    grand_total += inner_total;
     theBody.appendChild(theRow);
     theRow.appendChild(pro_name);
     theRow.appendChild(pro_amount);
@@ -82,7 +83,7 @@ function tambahProduk() {
     theRow.appendChild(pro_total);
     listProduct.appendChild(theBody);
 
-    theTotal.innerHTML = "<strong>Total Tagihan : </strong>" + formatter.format(grand_total);
+    theTotal.innerHTML = "<strong>Total Tagihan : </strong>" + formatter.format(grand_total_before);
 }
 
 function tambahDiskonProduk(){
@@ -115,23 +116,22 @@ function tambahDiskonProduk(){
     discounted_total = product_discount_amount*product_discount;
     grand_total_discount += discounted_total
 
-    theTotal.innerHTML = "<strong>Sebelum Diskon : </strong><s>" + formatter.format(grand_total) + 
+    theTotal.innerHTML = "<strong>Sebelum Diskon : </strong><s>" + formatter.format(grand_total_before) + 
     "</s> <br><strong>Diskon Sebesar : </strong><u>" + formatter.format(grand_total_discount) + 
-    "</u><br><br><strong>Total Tagihan : </strong>" + formatter.format(grand_total - grand_total_discount);
-    grand_total -= grand_total_discount
+    "</u><br><br><strong>Total Tagihan : </strong>" + formatter.format(grand_total_before - grand_total_discount);
 }
 
 function tambahDP() {
     let theTotal = document.getElementById("grand-total");
     var dp = document.getElementById("jumlah-dp").value;
     if(grand_total_discount > 0 && dp > 0){
-        theTotal.innerHTML = "<strong>Sebelum Diskon : </strong><s>" + formatter.format(grand_total) + 
+        theTotal.innerHTML = "<strong>Sebelum Diskon : </strong><s>" + formatter.format(grand_total_before) + 
         "</s> <br><strong>Diskon Sebesar : </strong>" + formatter.format(grand_total_discount) + 
         "<br><u><strong>Uang Muka (DP) : </strong>" + formatter.format(dp) + 
-        "</u><br><br><strong>Total Tagihan : </strong>" + formatter.format(grand_total - grand_total_discount - dp);
+        "</u><br><br><strong>Total Tagihan : </strong>" + formatter.format(grand_total_before - grand_total_discount - dp);
     }
     else if(grand_total_discount == 0 && dp > 0){
         theTotal.innerHTML = "<strong>Uang Muka (DP) : </strong>" + formatter.format(dp) + 
-        "</u><br><br><strong>Total Tagihan : </strong>" + formatter.format(grand_total - dp);
+        "</u><br><br><strong>Total Tagihan : </strong>" + formatter.format(grand_total_before - dp);
     }
 }
